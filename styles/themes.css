@@ -7,7 +7,7 @@
 
 :root .theme-light {
   --main-color: #000;
-  --accent-color: rgba(0, 0, 0, 0.6);
+  --accent-color: #00000099;
   --bg-color: #fff;
   --heart-contur: #000;
   --heart-main-body: #FF0000;
@@ -22,7 +22,7 @@
 
 :root .theme-dark {
   --main-color: #00CC14;
-  --accent-color: rgb(0, 204, 20, 0.6);
+  --accent-color: #00cc1499;
   --bg-color: #000;
   --heart-contur: #00CC14;
   --heart-main-body: #000;
@@ -34,7 +34,11 @@
   background-color: var(--bg-color);
 }
 
-
+:root .theme-auto {
+  background-attachment: fixed;
+  background-size: 4px;
+  background-repeat: repeat;
+}
 
 
 @media (prefers-color-scheme: light) {

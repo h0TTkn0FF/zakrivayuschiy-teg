@@ -14,11 +14,13 @@
 
 */
 
+
 .page {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   row-gap: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -26,9 +28,7 @@
 
 
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
-  font-variation-settings: 'wght' var(--Inter-main);
-
-  --main-width: clamp(375px, 70%, 700px);
+  font-variation-settings: 'wght' var(--main-text-font-wght);
 
   background-attachment: fixed;
   background-size: 4px;
@@ -44,7 +44,7 @@
   width: var(--main-width);
 
   font-family: var(--accent-font), Arial, Helvetica, sans-serif;
-  font-weight: var(--PressStart2P-accent);
+  font-weight: var(--accent-font-weight);
   color: var(--main-color);
 
   background-color: var(--bg-color);
@@ -59,24 +59,26 @@
   margin-block-start: 136px;
 }
 
-.title {
+.logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
+  color: currentColor;
+  pointer-events: none;
 }
 
-.subtitle {
+.title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
 
 .theme-menu {
-  margin-block-end: 25px;
+  margin-block-end: 18px;
 }
 
 .theme-menu__list {
   display: grid;
   grid-template-columns: 63px;
-  grid-template-rows: repeat(3, 14px);
-  gap: 14px;
+  gap: 10px;
   list-style: none;
 }
 
@@ -88,12 +90,14 @@
   padding: 0;
 
   font-family: var(--accent-font), Arial, Helvetica, sans-serif;
-  font-weight: var(--PressStart2P-accent);
+  font-weight: var(--accent-font-weight);
   font-size: 14px;
   text-transform: uppercase;
 
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
   transition: 0.3s ease;
 }
 
@@ -106,9 +110,10 @@
   position: absolute;
   content: '▶';
   padding: .5px 0;
+  top: 0;
   left: -20px;
   color: var(--accent-color);
-  animation: point .5s ease-in-out infinite;
+  animation: point .5s alternate infinite ease-in-out;
 }
 
 .theme-menu__button:hover {
@@ -133,10 +138,7 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  content: "";
-  height: 2px;
   width: 100%;
-  background-color: var(--accent-color);
 }
 
 .main {
@@ -161,7 +163,7 @@
   padding: 5px 10px;
 
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
-  font-variation-settings: 'wght' var(--Inter-accent);
+  font-variation-settings: 'wght' var(--accent-text-font-wght);
   font-size: 18px;
   line-height: 21.78px;
 
@@ -173,14 +175,13 @@
 .card__img-box {
   display: grid;
   place-content: center;
-  width: 700px;
-  height: 700px;
+  max-height: 700px;
+  min-width: 375px;
 }
 
 .card__img {
-  height: 700px;
+  height: 100%;
   width: 100%;
-
   border: var(--main-color) 2px solid;
 }
 
@@ -196,7 +197,7 @@
 
 .card__article-text {
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
-  font-variation-settings: 'wght' var(--Inter-main);
+  font-variation-settings: 'wght' var(--main-text-font-wght);
   font-size: 18px;
   line-height: 21px;
 
@@ -211,26 +212,26 @@
   gap: 8px;
 }
 
-.like-icon {
-  height: 39px;
-  width: 38px;
-}
-
 .heart {
   transform-origin: center;
 }
 
 .card__icon-button {
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+  height: 36px;
+  width: 36px;
 
   background-color: transparent;
   border: none;
+  cursor: pointer;
 
   transition: .3s ease;
 
   outline: transparent 2px solid;
+  outline-offset: -2px;
 }
 
 .card__icon-button:focus {
@@ -239,22 +240,22 @@
 
 .card__icon-button:focus-visible {
   outline: var(--main-color) 2px solid;
+  outline-offset: -2px;
 }
 
-.card__like-button {
+.button__text {
   position: relative;
-  padding: 0;
-  height: 36px;
-  width: 130px;
+  z-index: 1;
 
-  background-color: transparent;
-  border: var(--main-color) 2px solid;
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: var(--accent-font-weight);
+  color: var(--main-color);
 
-
-  transition: .5s ease-in-out;
+  transition: 1s ease;
 }
 
-.card__like-button .bg-anim::before {
+.bg__transition::before {
   z-index: 0;
   position: absolute;
   content: "";
@@ -268,40 +269,33 @@
   background-color: var(--main-color);
 }
 
-.card__like-button:hover .bg-anim::before {
-  z-index: 0;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
+.bg__transition:hover::before {
   width: 100%;
+}
 
-  background-color: var(--main-color);
+.button__focus:focus {
+  outline: none;
+}
+
+.button__focus:focus-visible {
+  box-shadow: var(--main-color) 2px 2px 0;
+
+  transition: 0.3s ease;
+}
+
+.card__like-button {
+  position: relative;
+  padding: 0;
+  height: 36px;
+  width: 130px;
+
+  background-color: transparent;
+  border: var(--main-color) 2px solid;
+  cursor: pointer;
 }
 
 .card__like-button:hover .button__text {
   color: var(--bg-color);
-}
-
-.card__like-button:focus, .card__save-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus-visible, .card__save-button:focus-visible {
-  box-shadow: var(--main-color) 2px 2px 0;
-}
-
-.button__text {
-  position: relative;
-  z-index: 1;
-
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: var(--PressStart2P-accent);
-  color: var(--main-color);
-
-  transition: 1s ease;
 }
 
 .card__save-button {
@@ -318,8 +312,7 @@
 
   background-color: var(--bg-color);
   border: var(--main-color) 2px solid;
-
-  transition: .5s ease-in-out;
+  cursor: pointer;
 }
 
 .card__save-button:hover .button__text {
@@ -328,32 +321,6 @@
 
 .card__save-button:hover .floppy {
   color: var(--bg-color);
-}
-
-.card__save-button .bg-anim::before {
-  z-index: 0;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-
-  transition: .5s ease-in-out;
-
-  background-color: var(--main-color);
-}
-
-.card__save-button:hover .bg-anim::before {
-  z-index: 0;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  background-color: var(--main-color);
 }
 
 .floppy {
@@ -377,20 +344,6 @@
     margin-block-start: 120px;
   }
 
-  .card {
-    height: 760px;
-  }
-  
-  .card__img-box {
-    height: 375px;
-    width: 375px;
-  }
-
-  .card__img {
-    height: 375px;
-    width: 100%;
-  }
-
   .card__save-button {
     padding: 15px 0;
     height: 84px;
@@ -399,5 +352,6 @@
   
   .floppy {
     height: 28px;
+    margin-inline-end: 3px;
   }
 }
