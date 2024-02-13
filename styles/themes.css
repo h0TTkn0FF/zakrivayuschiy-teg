@@ -4,3 +4,68 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root .theme-light {
+  --main-color: #000;
+  --accent-color: #00000099;
+  --bg-color: #fff;
+  --heart-contur: #000;
+  --heart-main-body: #FF0000;
+
+
+  --main-text-font-wght: 400;
+  --accent-text-font-wght: 700;
+
+  background-image: url(../svg/pattern-light.svg);
+  background-color: var(--bg-color);
+}
+
+:root .theme-dark {
+  --main-color: #00CC14;
+  --accent-color: #00cc1499;
+  --bg-color: #000;
+  --heart-contur: #00CC14;
+  --heart-main-body: #000;
+
+  --main-text-font-wght: 465;
+  --accent-text-font-wght: 785;
+
+  background-image: url(../svg/pattern-dark.svg);
+  background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-light,
+  .theme-auto {
+    --main-color: #000;
+    --accent-color: #000;
+    --activ-color-button: #00000099;
+    --bg-color: #fff;
+    --heart-contur: #000;
+    --heart-main-body: #FF0000;
+    
+    --main-text-font-wght: 400;
+    --accent-text-font-wght: 700;
+
+    background-image: url(../svg/pattern-light.svg);
+    background-color: var(--bg-color);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-dark,
+  .theme-auto {
+    --main-color: #00CC14;
+    --accent-color: #00CC14;
+    --activ-color-button: #00cc1499;
+    --bg-color: #000;
+    --heart-contur: #00CC14;
+    --heart-main-body: #000;
+
+    --main-text-font-wght: 465;
+    --accent-text-font-wght: 785;
+
+    background-image: url(../svg/pattern-dark.svg);
+    background-color: var(--bg-color);
+  }
+}

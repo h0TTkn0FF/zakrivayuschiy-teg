@@ -1,1 +1,24 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --main-color: #000;
+  --accent-color: #00000099;
+  --bg-color: #fff;
+  --heart-contur: #000;
+  --heart-main-body: #FF0000;
+  
+  --main-text-font-wght: 400;
+  --accent-text-font-wght: 700;
+
+  --main-font: 'Inter Variable';
+  --accent-font: 'PressStart2P';
+  --heart-sparks: #FF0000;
+
+  --accent-font-weight: 400;
+
+  --main-width: clamp(375px, 70%, 700px);
+
+  background-attachment: fixed;
+    background-size: 4px;
+    background-repeat: repeat;
+}
