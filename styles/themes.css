@@ -13,8 +13,8 @@
   --heart-main-body: #FF0000;
 
 
-  --Inter-main: 400;
-  --Inter-accent: 700;
+  --main-text-font-wght: 400;
+  --accent-text-font-wght: 700;
 
   background-image: url(../svg/pattern-light.svg);
   background-color: var(--bg-color);
@@ -27,48 +27,45 @@
   --heart-contur: #00CC14;
   --heart-main-body: #000;
 
-  --Inter-main: 465;
-  --Inter-accent: 785;
+  --main-text-font-wght: 465;
+  --accent-text-font-wght: 785;
 
   background-image: url(../svg/pattern-dark.svg);
   background-color: var(--bg-color);
 }
 
-:root .theme-auto {
-  background-attachment: fixed;
-  background-size: 4px;
-  background-repeat: repeat;
-}
-
-
 @media (prefers-color-scheme: light) {
-  .theme-light {
+  .theme-light,
+  .theme-auto {
     --main-color: #000;
     --accent-color: #000;
-    --activ-color-button: rgba(0, 0, 0, 0.6);
+    --activ-color-button: #00000099;
     --bg-color: #fff;
     --heart-contur: #000;
     --heart-main-body: #FF0000;
     
-    --Inter-main: 400;
-    --Inter-accent: 700;
-    
-    background-image: url(../images/background-light.jpg);
+    --main-text-font-wght: 400;
+    --accent-text-font-wght: 700;
+
+    background-image: url(../svg/pattern-light.svg);
+    background-color: var(--bg-color);
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .theme-dark {
+  .theme-dark,
+  .theme-auto {
     --main-color: #00CC14;
     --accent-color: #00CC14;
-    --activ-color-button: rgb(0, 204, 20, 0.6);
+    --activ-color-button: #00cc1499;
     --bg-color: #000;
     --heart-contur: #00CC14;
     --heart-main-body: #000;
 
-    --Inter-main: 465;
-    --Inter-accent: 785;
+    --main-text-font-wght: 465;
+    --accent-text-font-wght: 785;
 
-    background-image: url(../images/background-dark.png);
+    background-image: url(../svg/pattern-dark.svg);
+    background-color: var(--bg-color);
   }
 }
