@@ -25,14 +25,74 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   margin: 0 auto;
+  height: 100%;
 
 
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
   font-variation-settings: 'wght' var(--main-text-font-wght);
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 4px;
-  background-repeat: repeat;
+}
+
+dialog {
+  width: fit-content;
+  padding: 30px;
+  background-color: var(--bg-color);
+
+  min-width: 357px;
+
+  border: var(--main-color) 2px solid;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.dialog__text-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dialog__text-box svg {
+  color: var(--main-color);
+}
+
+.dialog__text {
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-weight: var(--accent-font-weight);
+  font-size: 14px;
+  line-height: 21px;
+
+  text-transform: uppercase;
+  
+  color: var(--main-color);
+}
+
+.dialog__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12.5px 0;
+  width: 100%;
+  height: fit-content;
+
+  background-color: transparent;
+  border: var(--main-color) 2px solid;
+
+  cursor: pointer;
 }
 
 .header {
@@ -69,6 +129,9 @@
 .title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-weight: var(--accent-font-weight);
+  color: var(--main-color);
 }
 
 .theme-menu {
@@ -142,11 +205,12 @@
 }
 
 .main {
-  width: var(--main-width);
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 
-.main:nth-last-child() {
-  margin-block-end: 100px;
+  width: var(--main-width);
 }
 
 .card {
@@ -154,7 +218,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-block-end: 50px;
 
   background-color: var(--bg-color);
 }
@@ -172,6 +235,37 @@
   border-block-end: none;
 }
 
+.card__img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  z-index: 1;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  mix-blend-mode: hard-light;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-weight: var(--accent-font-weight);
+  color: var(--main-color);
+
+  -webkit-text-stroke: 1px var(--bg-color);
+}
+
+@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .label {
+      -webkit-text-stroke: 1px var(--bg-color);
+      /* text-stroke: 1px var(--bg-color); */
+      text-shadow: none;
+  }
+} 
+
 .card__img-box {
   display: grid;
   place-content: center;
@@ -185,6 +279,7 @@
   object-fit: cover;
   object-position: center;
   border: var(--main-color) 2px solid;
+
 }
 
 .card__article {
@@ -252,9 +347,9 @@
   font-family: var(--accent-font), Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: var(--accent-font-weight);
-  color: var(--main-color);
+  color: var(--button-text-difference);
 
-  transition: 1s ease;
+  mix-blend-mode: difference;
 }
 
 .bg__transition::before {
@@ -296,10 +391,6 @@
   cursor: pointer;
 }
 
-.card__like-button:hover .button__text {
-  color: var(--bg-color);
-}
-
 .card__save-button {
   position: relative;
   display: flex;
@@ -317,14 +408,6 @@
   cursor: pointer;
 }
 
-.card__save-button:hover .button__text {
-  color: var(--bg-color);
-}
-
-.card__save-button:hover .floppy {
-  color: var(--bg-color);
-}
-
 .floppy {
   position: relative;
   z-index: 1;
@@ -332,12 +415,25 @@
   margin-inline-start: -2px;
   height: 21px;
 
-  color: var(--main-color);
+  mix-blend-mode: difference;
+
+  color: var(--button-text-difference);
 
   transition: 1s ease;
 }
 
+.decor-span {
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: var(--accent-font-weight);
+  color: var(--main-color);
+}
+
 @media (width <= 375px) {
+  dialog {
+    min-width: 341px;
+  }
+
   .header {
     height: 327px;
   }

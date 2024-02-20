@@ -18,7 +18,13 @@
 
   --main-width: clamp(375px, 70%, 700px);
 
-  background-attachment: fixed;
-    background-size: 4px;
-    background-repeat: repeat;
+  --light-gradient:
+  repeating-linear-gradient(90deg, transparent , #d3d3d3 2px),
+  repeating-linear-gradient(0deg, transparent , #d3d3d3 2px),
+  linear-gradient(0deg, #1a1a1a, #e7e7e7);
+
+  --dark-gradient:
+  repeating-linear-gradient(90deg, transparent , #000 2px),
+  repeating-linear-gradient(0deg, transparent , #000 2px),
+  linear-gradient(0deg,  #004306, #007f0c);
 }

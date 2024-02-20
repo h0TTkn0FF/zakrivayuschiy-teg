@@ -16,7 +16,9 @@
   --main-text-font-wght: 400;
   --accent-text-font-wght: 700;
 
-  background-image: url(../svg/pattern-light.svg);
+  --button-text-difference: #FFF;
+  
+  background-image: var(--light-gradient);
   background-color: var(--bg-color);
 }
 
@@ -30,7 +32,9 @@
   --main-text-font-wght: 465;
   --accent-text-font-wght: 785;
 
-  background-image: url(../svg/pattern-dark.svg);
+  --button-text-difference: #00CC14;
+
+  background-image: var(--dark-gradient);
   background-color: var(--bg-color);
 }
 
@@ -47,7 +51,9 @@
     --main-text-font-wght: 400;
     --accent-text-font-wght: 700;
 
-    background-image: url(../svg/pattern-light.svg);
+    --button-text-difference: #FFF;
+    
+    background-image: var(--light-gradient);
     background-color: var(--bg-color);
   }
 }
@@ -65,7 +71,9 @@
     --main-text-font-wght: 465;
     --accent-text-font-wght: 785;
 
-    background-image: url(../svg/pattern-dark.svg);
+    --button-text-difference: #00CC14;
+    
+    background-image: var(--dark-gradient);
     background-color: var(--bg-color);
   }
 }
