@@ -47,7 +47,7 @@ dialog {
   border: var(--main-color) 2px solid;
 }
 
-dialog[open] {
+.dialog__box {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -429,8 +429,26 @@ dialog::backdrop {
   color: var(--main-color);
 }
 
+.soft-light {
+  mix-blend-mode: soft-light;
+}
+
+.multiply {
+  mix-blend-mode: multiply;
+  background-color: var(--main-color);
+}
+
+.screen {
+  mix-blend-mode: difference;
+}
+
+.exclusion {
+  mix-blend-mode: exclusion;
+}
+
 @media (width <= 375px) {
   dialog {
+    padding: 30px 42px;
     min-width: 341px;
   }
 
