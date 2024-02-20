@@ -428,55 +428,36 @@ dialog::backdrop {
   color: var(--main-color);
 }
 
-.soft-light {
-  mix-blend-mode: soft-light;
+.brightness {
+  filter: brightness(120%);
 }
 
-.hue {
-  mix-blend-mode: hue;
+.contrast {
+  filter: contrast(100%);
 }
 
-.hard-light {
-  mix-blend-mode: hard-light;
+.grayscale {
+  filter: grayscale(120%);
 }
 
-.overlay {
-  mix-blend-mode: overlay;
+.hue-rotate {
+  filter: hue-rotate(-30deg);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.invert {
+  filter: invert(.2);
+}
+
+.sepia {
+  filter: sepia(25%);
 }
 
 .multiply {
-  mix-blend-mode: multiply;
-}
-
-.screen {
-  position: relative;
-}
-
-.screen::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  mix-blend-mode: screen;
-  background-image: linear-gradient(45deg, var(--main-color), var(--bg-color));
-}
-
-.exclusion {
-  position: relative;
-}
-
-.exclusion::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-
-  mix-blend-mode: exclusion;
-  background-image: repeating-radial-gradient(var(--accent-color) 1px, var(--heart-sparks) 10px);
+  filter: brightness(90%) contrast(120%) sepia(20%);
 }
 
 @media (width <= 375px) {
