@@ -16,19 +16,19 @@
   </head>
   <body class="page">
     <dialog id="dialog">
-      <form method="dialog" class="dialog__box">
         <div class="dialog__text-box">
-          <svg viewBox="0 0 21 21" height="39" width="39" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <use xlink:href="./svg/floppy.svg#floppy"/>
-          </svg>
+          <div class="dialog__svg">
+            <svg viewBox="0 0 39 39" height="39px" width="39px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <use xlink:href="./svg/floppy.svg#floppy"/>
+            </svg>
+          </div>
           <p class="dialog__text">
-            Вставьте<br />дискету, чтобы<br />продолжить
+            Вставьте дискету, чтобы продолжить
           </p>
         </div>
         <button class="dialog__button bg__transition button__focus" type="button" onclick="window['dialog'].close()">
           <span class="button__text">ОК</span>
         </button>
-      </form>
     </dialog>
     <header class="header">
       <div class="header__title">
@@ -69,7 +69,7 @@
             <img
             src="https://media0.giphy.com/media/116seTvbXx07F6/giphy.gif?cid=ecf05e47uh7fkq46cg54umczmc1nkluizgjiu8x69ujmauvh&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt="Драмролл"
-            class="sepia card__img card__img-box"
+            class="sepia card__img "
             >
           </div>
           <div class="card__article">
@@ -103,7 +103,7 @@
           <h2 class="card__title">1 спринт: Я — чистый лист</h2>
           <div class="card__img-container">
             <p class="label">&lt;beginning&gt;</p>
-            <picture class="card__img-box">
+            <picture class="">
               <img src="https://images.unsplash.com/photo-1598620617148-c9e8ddee6711?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Чистый лист бумаги"
               class="contrast card__img"
@@ -144,7 +144,7 @@
             <img
             src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanl0M24zaHMwc2ZqMG5xaDh3YzJsNHZmbW1kZWhjbnQyNmsyMHRhcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26FmQ6EOvLxp6cWyY/giphy.gif"
             alt="Йода вещает истину"
-            class="brightness card__img card__img-box"
+            class="brightness card__img "
             >
           </div>
           <div class="card__article">
@@ -178,7 +178,7 @@
           <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
           <div class="card__img-container">
             <p class="label">&lt;ideality&gt;</p>
-            <picture class="card__img-box">
+            <picture class="">
               <img
               src="https://images.unsplash.com/photo-1682107787182-5195d4942af4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Рисунок на полу"
@@ -221,7 +221,7 @@
             <img
             src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXlubHZ1aDQ2N3o5bW4zd2JvZnhvYjk0NG0yNjE4a3Rlb2duYnp3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3rgXBrLlRs4ZlpnVDO/giphy.gif"
             alt="Команда скрещивает руки"
-            class="invert card__img card__img-box"
+            class="invert card__img "
             >
           </div>
           <div class="card__article">
@@ -258,7 +258,7 @@
             <img
             src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHloM2djMHRxMXFpOG9oMjNxNm5jNGQ1NzAzd2psYWo0ZmU0M2gxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUySTOigOUHucl3rfW/giphy.gif"
             alt="Развертывание карты (плана)"
-            class="grayscale card__img card__img-box"
+            class="grayscale card__img "
             >
           </div>
           <div class="card__article">
@@ -295,7 +295,7 @@
             <img
             src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXdpcG5wdzN0dDVyOWhwY3AxZDR0NjBwYTY1dnB3bGZ4am1xNjB2eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHGr1Fhz0kyv8Ig/giphy.gif"
             alt="Отчаянное падение"
-            class="hue-rotate card__img card__img-box"
+            class="hue-rotate card__img "
             >
           </div>
           <div class="card__article">
@@ -332,7 +332,7 @@
             <img
             src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExczAydHA1d205eW8xMmx1Y3N1c3p3Njh6aGR3enBlMDZ0NmtveGZxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3q2Z6S6n38zjPswo/giphy.gif"
             alt="Победный танец"
-            class="multiply card__img card__img-box"
+            class="multiply card__img "
             >
           </div>
           <div class="card__article">

@@ -19,12 +19,10 @@
   --main-width: clamp(375px, 70%, 700px);
 
   --light-gradient:
-  repeating-linear-gradient(90deg, transparent , #d3d3d3 2px),
-  repeating-linear-gradient(0deg, transparent , #d3d3d3 2px),
-  linear-gradient(0deg, #1a1a1a, #e7e7e7);
+  repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+  repeating-linear-gradient(transparent, transparent 2px, #d3d3d3 2px, #d3d3d3 4px);
 
   --dark-gradient:
-  repeating-linear-gradient(90deg, transparent , #000 2px),
-  repeating-linear-gradient(0deg, transparent , #000 2px),
-  linear-gradient(0deg,  #004306, #007f0c);
+  repeating-linear-gradient(90deg, transparent, transparent 2px, #000 2px, #000 4px),
+  repeating-linear-gradient(transparent, transparent 2px, #000 2px, #000 4px);
 }
