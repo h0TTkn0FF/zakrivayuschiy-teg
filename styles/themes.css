@@ -16,7 +16,11 @@
   --main-text-font-wght: 400;
   --accent-text-font-wght: 700;
 
-  background-image: url(../svg/pattern-light.svg);
+  --button-text-difference: #FFF;
+  
+  background-image:
+  var(--light-gradient),
+  linear-gradient(0deg, #1a1a1a, #e7e7e7);
   background-color: var(--bg-color);
 }
 
@@ -30,16 +34,19 @@
   --main-text-font-wght: 465;
   --accent-text-font-wght: 785;
 
-  background-image: url(../svg/pattern-dark.svg);
+  --button-text-difference: #00CC14;
+
+  background-image:
+  var(--dark-gradient),
+  linear-gradient(0deg,  #004306, #007f0c);
   background-color: var(--bg-color);
 }
 
 @media (prefers-color-scheme: light) {
-  .theme-light,
+  
   .theme-auto {
     --main-color: #000;
-    --accent-color: #000;
-    --activ-color-button: #00000099;
+    --accent-color: #00000099;
     --bg-color: #fff;
     --heart-contur: #000;
     --heart-main-body: #FF0000;
@@ -47,17 +54,20 @@
     --main-text-font-wght: 400;
     --accent-text-font-wght: 700;
 
-    background-image: url(../svg/pattern-light.svg);
+    --button-text-difference: #FFF;
+    
+    background-image:
+    var(--light-gradient),
+    linear-gradient(0deg, #1a1a1a, #e7e7e7);
     background-color: var(--bg-color);
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .theme-dark,
+  
   .theme-auto {
     --main-color: #00CC14;
-    --accent-color: #00CC14;
-    --activ-color-button: #00cc1499;
+    --accent-color: #00cc1499;
     --bg-color: #000;
     --heart-contur: #00CC14;
     --heart-main-body: #000;
@@ -65,7 +75,11 @@
     --main-text-font-wght: 465;
     --accent-text-font-wght: 785;
 
-    background-image: url(../svg/pattern-dark.svg);
+    --button-text-difference: #00CC14;
+    
+    background-image:
+    var(--dark-gradient),
+    linear-gradient(0deg,  #004306, #007f0c);
     background-color: var(--bg-color);
   }
 }
